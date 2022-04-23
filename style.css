@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
+/* COLORS */
+:root {
+  --background: #535353;
+  --light: #cfcfcf;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background);
+}
+
+.flex__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: var(--white);
+}
+
+/* ------------------------ */
+.wrapper {
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+.scene {
+  margin-top: 40px;
+  max-width: 85%;
+}
+
+.footer {
+  margin-top: 20px;
+}
+.footer p {
+  color: var(--light);
+  text-align: center;
+}
+
+/* SVG ELEMETNS */
+
+/* CLOUDS */
+.clouds {
+  animation: 40s linear infinite clouds;
+}
+
+/* TREES */
+.tree {
+  transform-origin: bottom;
+  transform-box: fill-box;
+  animation: 2s linear infinite alternate-reverse trees;
+}
+
+/* CARS */
+.car {
+  animation: 7s linear infinite cars;
+}
+
+#car_2 {
+  animation-direction: reverse;
+}
+
+.car_body {
+  animation: 0.3s linear infinite alternate-reverse hopping;
+}
+
+/* WHEELS */
+.wheel {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: 1s linear infinite wheels;
+}
+
+#wheel_to_left {
+  animation-direction: reverse;
+}
+
+/* ANIMATIONS */
+@keyframes clouds {
+  from {
+    transform: translateX(-60%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes trees {
+  from {
+    transform: skewX(-4deg);
+  }
+
+  to {
+    transform: skewX(4deg);
+  }
+}
+
+@keyframes cars {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes wheels {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hopping {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(5px);
+  }
+}
